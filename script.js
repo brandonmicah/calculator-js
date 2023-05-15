@@ -32,58 +32,12 @@ const equal = function (arr) {
   display.innerHTML = eval(newArr);
 };
 
-// gridBtns.forEach((button) => {
-//   button.addEventListener("click", function (e) {
-//     if (
-//       e.target.dataset.button === "plus" ||
-//       e.target.dataset.button === "minus" ||
-//       e.target.dataset.button === "multiply" ||
-//       e.target.dataset.button === "divide"
-//     ) {
-//       pushCalcSpace(e);
-//     } else if (e.target.dataset.button === "equals") {
-//       console.log(calculate);
-//     } else {
-//       pushCalc(e);
-//     }
-//   });
-// });
-
 calcFace.addEventListener("click", function (e) {
   if (e.target === equalsBtn) equal(calcArr);
   if (e.target === clearBtn) {
     display.innerHTML = "";
     calcArr = [];
   }
-  if (
-    e.target.dataset.button === "plus" ||
-    e.target.dataset.button === "minus" ||
-    e.target.dataset.button === "multiply" ||
-    e.target.dataset.button === "divide"
-  )
-    pushCalcSpace(e);
-  if (
-    e.target.dataset.button === "zero" ||
-    e.target.dataset.button === "one" ||
-    e.target.dataset.button === "two" ||
-    e.target.dataset.button === "three" ||
-    e.target.dataset.button === "four" ||
-    e.target.dataset.button === "five" ||
-    e.target.dataset.button === "six" ||
-    e.target.dataset.button === "seven" ||
-    e.target.dataset.button === "eight" ||
-    e.target.dataset.button === "nine"
-  )
-    pushCalc(e);
-
-  //   console.log(e.target)
+  if (e.target.dataset.button === "operator") pushCalcSpace(e);
+  if (e.target.dataset.button === "num") pushCalc(e);
 });
-
-// console.log(calculate);
-
-// clearBtn.addEventListener("click", function () {
-//   display.innerHTML = "";
-//   calcArr = [];
-// });
-
-// equalsBtn.addEventListener("click", function () {});
